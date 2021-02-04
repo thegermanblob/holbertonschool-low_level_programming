@@ -23,7 +23,7 @@ int main(void)
 	}
 	else if (ld == 0)
 	{
-	puts(" and is zero");
+	puts(" and is 0");
 	}
 	else if ((ld < 6) && (ld != 0))
 	{
