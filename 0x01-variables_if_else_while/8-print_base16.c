@@ -13,13 +13,13 @@ int main(void)
 	char hx[11];
 	char al[7];
 
-	for( i = 0; i < 10; i++)
+	for (i = 0; i < 10; i++)
 	{
 	hx[i] = '0' + i;
 	putchar(hx[i]);
 	}
 
-	for(i = 0 ; i < 6; i++)
+	for (i = 0 ; i < 6; i++)
 	{
 	al[i] = 'a' + i;
 	putchar(al[i]);
