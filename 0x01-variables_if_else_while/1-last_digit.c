@@ -10,7 +10,7 @@
  */
 int main(void)
 {
-	int n;
+	int n = 0;
 	int ld = n % 10;
 
 	srand(time(0));
@@ -22,10 +22,11 @@ int main(void)
 	}
 	else if (ld == 0)
 	{
-	puts(" and is zero";
+	puts(" and is zero");
 	}
 	else if ((ld < 6) && (ld != 0))
 	{
-	puts(" and is less than 6 and not 0")
+	puts(" and is less than 6 and not 0");
+	}
 	return (0);
 }
