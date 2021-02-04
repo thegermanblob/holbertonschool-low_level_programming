@@ -2,9 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - Takes random num and
+ *        determines if positive
  *
- * betty style doc for function main goes there
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -12,17 +13,18 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+	printf("%i ", n);
 	if (n < 0)
 	{
-	printf("%i is negative", n);
+	puts("is negative");
 	}
 	else if (n == 0)
 	{
-	printf("%i is zero", n);
+	puts("is zero");
 	}
 	else if (n > 0)
 	{
-	printf("%i is positive", n);
+	puts("is positive");
 	}
 	return (0);
 }
