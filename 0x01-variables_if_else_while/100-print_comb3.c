@@ -15,7 +15,7 @@ int main(void)
 	{
 	for (c = 48; c < 58; c++)
 	{
-	if (c > ci)
+	if(c > ci)
 	{
 	putchar(ci);
 	putchar(c);
