@@ -7,20 +7,21 @@
  */
 int main(void)
 {
-	unsigned long int i, x, y;
+	unsigned long int i, x, y, r;
 
-	x = 1;
-	y = 2;
-	for (i = 0; i <= 25; i++)
+	x = 0;
+	y = 1;
+	for (i = 0; i < 49; i++)
 	{
-		printf("%li, ", x);
-		printf("%li", y);
-		if (i != 25)
+		r = x + y;
+		x = y;
+		y = r;
+		/*printf("%li, ", x);*/
+		printf("%li", r);
+		if (i != 48)
 			printf(", ");
 		else
 			printf("\n");
-		x = x + y;
-		y = x + y;
 	}
 	return (0);
 }
