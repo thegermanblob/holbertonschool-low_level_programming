@@ -11,17 +11,17 @@ int main(void)
 
 	x = 0;
 	y = 1;
-	for (i = 0; i < 49; i++)
+	for (i = 0; i < 50; i++)
 	{
 		r = x + y;
 		x = y;
 		y = r;
 		/*printf("%li, ", x);*/
-		printf("%li", r);
-		if (i != 48)
-			printf(", ");
-		else
+		printf("%lu", r);
+		if (i == 49)
 			printf("\n");
+		else
+			printf(", ");
 	}
 	return (0);
 }
