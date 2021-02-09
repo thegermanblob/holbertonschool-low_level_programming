@@ -7,7 +7,8 @@
  */
 int main(void)
 {
-	unsigned long int x, y, r, rr;
+	unsigned long int x, y, r;
+	float rr;
 
 	x = 0;
 	y = 1;
@@ -21,6 +22,6 @@ int main(void)
 		if ((r % 2) == 0)
 			rr = rr + r;
 	}
-	printf("%lu\n", rr);
+	printf("%.0f\n", rr);
 	return (0);
 }
