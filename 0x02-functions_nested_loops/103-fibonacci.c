@@ -7,11 +7,11 @@
  */
 int main(void)
 {
-	unsigned long int i, x, y, r, rr;
+	unsigned long int x, y, r, rr;
 
 	x = 0;
 	y = 1;
-	for (i = 0; i < 33; i++)
+	while(1)
 	{
 		r = x + y;
 		x = y;
