@@ -12,14 +12,14 @@ int main(void)
 	x = 1;
 	y = 2;
 	printf("1, 2, ");
-	for (i = 0; i < 92; i++)
+	for (i = 0; i < 96; i++)
 	{
 		r = x + y;
 		x = y;
 		y = r;
 		/*printf("%li, ", x);*/
 		printf("%.0f", r);
-		if (i == 91)
+		if (i == 95)
 			printf("\n");
 		else
 			printf(", ");
