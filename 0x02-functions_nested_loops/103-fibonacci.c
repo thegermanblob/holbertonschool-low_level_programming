@@ -16,6 +16,8 @@ int main(void)
 		r = x + y;
 		x = y;
 		y = r;
+		if ( r > 4000000)
+			break;
 		if ((r % 2) == 0)
 			rr = rr + r;
 	}
