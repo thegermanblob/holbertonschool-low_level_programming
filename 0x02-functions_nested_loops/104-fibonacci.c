@@ -7,43 +7,35 @@
  */
 int main(void)
 {
-	unsigned long i, x, y, r;
-	unsigned long x1, x2, y1, y2;
-	unsigned long r1, r2;
+	unsigned long x_f1 = 0, y_f1 = 1, x_f2 = 0, y_f2 = 2;
+	unsigned long x_next = 0, y_next = 0;
+	unsigned long scale = 1000000000;
+	int n = 3;
 
-	x = 0;
-	y = 1;
-
-	for (i = 0; i < 92; i++)
+	printf("1, 2, ");
+	while (n <= 98)
 	{
-		r = x + y;
-		x = y;
-		y = r;
-		printf("%lu, ", r);
-	}
-	x1 = x / 1000000000;
-	x2 = x % 1000000000;
-	y1 = y / 1000000000;
-	y2 = y % 1000000000;
+		x_next = (y_f1 + y_f2) / scale;
+		x_next += (x_f1 + x_f2);
+		y_next = (y_f1 + y_f2) % scale;
 
-	for (i = 93; i < 99; i++)
-	{
-		r1 = x1 + y1;
-		r2 = x2 + y2;
-		if (x2 + y2 > 9999999999)
+		x_f1 = x_f2;
+		y_f1 = y_f2;
+
+
+		x_f2 = x_next;
+		y_f2 = y_next;
+		if (x_next > 0)
 		{
-			r1 += 1;
-			r2 %= 1000000000;
+			printf("%lu", x_next);
+			printf("%09lu", y_next);
 		}
-		printf("%lu%lu", r1, r2);
-		if (i != 98)
+		else
+			printf("%lu", y_next);
+		if (n < 98)
 			printf(", ");
-		x1 = y1;
-		x2 = y2;
-		y1 = r1;
-		y2 = r2;
+		n++;
 	}
 	printf("\n");
-
 	return (0);
 }
