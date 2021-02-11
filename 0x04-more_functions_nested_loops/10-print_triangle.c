@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_diagonal - prints lines
- * @n: times to print
+ * print_triangle - prints lines
+ * @s: times to print
  *
  * Return: void
  */
@@ -15,7 +15,7 @@ void print_triangle(int s)
 	{
 		for (y = 0; y < s; y++)
 		{
-			for (x = 0; x < (s - y); x++)
+			for (x = 1 ; x < (s - y); x++)
 			{
 				_putchar(' ');
 			}
