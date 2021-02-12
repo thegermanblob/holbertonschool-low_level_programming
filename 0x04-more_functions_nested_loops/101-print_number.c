@@ -7,6 +7,7 @@
  */
 void print_number(int n)
 {
+	int ni;
 	if (n < 0)
 		ni = -n;
 	if (ni / 10 != 0)
