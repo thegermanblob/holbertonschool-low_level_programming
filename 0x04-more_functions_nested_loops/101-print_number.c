@@ -15,10 +15,9 @@ void print_number(int n)
 		ni = -n;
 	}
 	else
-	{
 		ni = n;
-	}
+
 	if (ni / 10 != 0)
 		print_number(ni / 10);
-	_putchar(ni % 10 + '0');
+	_putchar((ni % 10) + 48);
 }
