@@ -15,10 +15,10 @@ int main(void)
 		while (big % f == 0)
 		{
 			big = big / f;
-			if (f < pf)
-				pf = f
+			if (f > pf)
+				pf = f;
 		}
 	}
-	printf("\n");
+	printf("%li\n", pf);
 	return (0);
 }
