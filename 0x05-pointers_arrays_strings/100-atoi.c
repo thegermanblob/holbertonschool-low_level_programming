@@ -1,91 +1,33 @@
 #include "holberton.h"
-void num_find(char *s, int *end, int *begin);
-int power(int base, int exp);
 /**
- *
- *
+ * _atoi - turn string to int
+ * @s: string to be converted
+ * Return: Converted num
  *
  *
  */
 int _atoi(char *s)
 {
-	int count, control, result, end, begin, d, cn2, n, rr, sigh;
-	
+	int i = 0, len = 0, num = 0, sign = 1, ok = 0;
 
-	result = 0;
-	sigh = 1;
-	num_find(s, &end, &begin);
-	d = end - begin;
-	cn2 = begin;
-	count = 0;
-	while(s[count] != '\0')
+	while (s[len] != '\0')
 	{
-		if (s[count] >= '0' && s[count] <= '9')
-		{
-			control = 1;
-		}
-		count++;
+		len++;
 	}
-	if (control != 1)
-		return(0);
-	else
+	while (i < len && ok == 0)
 	{
-		while (cn2 <= end)
+		if (s[i] == '-')
+			sign *= -1;
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			if (s[cn2] == '-')
-			{
-				sigh = sigh * (-1);
-			}
-			else if ((s[cn2] >= '0') && (s[cn2] <= '9'))
-			{
-				n = (s[cn2] - '0');
-				result = result + (power(10,d) * n);
-			}
-			cn2++;
-			d--;
+			num = num * 10 + sign * (s[i] - 48);
+			if (s[i + 1] >= '0' && s[i + 1] <= '9')
+				ok = 0;
+			else
+				ok = 1;
 		}
-		rr = (sigh * result);
-		return (rr);
+		i++;
 	}
-}
-/**
- *
- *
- *
- *
- *
- */
-void num_find(char *s, int *end, int *begin)
-{
-	int count;
-
-	count = 0;
-	while (s[count] != '\0')
-	{
-		if (((s[count] >= '0') && (s[count] <= '9')) &&
-			((s[count + 1] >= '0') && (s[count + 1] >= '9')))
-		{
-			*begin = count;
-		}
-		if (((s[count] >= '0') && (s[count] <= '9')) &&
-			((s[count + 1] < '0') || (s[count + 1] > '9') || (s[count + 1] == '\0')))
-		{
-			*end = count;
-			break;
-		}
-		count++;
-	}
+	return (num);
 }
 
-int power(int base, int exp) 
-{
-	if (exp == 0)
-		return 1;
-    else if (exp % 2)
-		return base * power(base, exp - 1);
-    else
-	{
-		int temp = power(base, exp / 2);
-		return temp * temp;
-	}
-}
