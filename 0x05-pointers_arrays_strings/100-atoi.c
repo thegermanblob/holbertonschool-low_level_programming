@@ -1,5 +1,5 @@
 #include "holberton.h"
-int num_find(char *s, int *end, int *begin);
+void num_find(char *s, int *end, int *begin);
 int power(int base, int exp);
 /**
  *
@@ -9,16 +9,26 @@ int power(int base, int exp);
  */
 int _atoi(char *s)
 {
-	int result, end, begin, d, cn2, n, rr, sigh, p;
+	int count, control, result, end, begin, d, cn2, n, rr, sigh;
 	
 
 	result = 0;
 	sigh = 1;
-	begin = 0;
-	p = num_find(s, &end, &begin);
+	num_find(s, &end, &begin);
 	d = end - begin;
 	cn2 = begin;
-	if (p != 0)
+	count = 0;
+	while(s[count] != '\0')
+	{
+		if (s[count] >= '0' && s[count] <= '9')
+		{
+			control = 1;
+		}
+		count++;
+	}
+	if (control != 1)
+		return(0);
+	else
 	{
 		while (cn2 <= end)
 		{
@@ -37,8 +47,6 @@ int _atoi(char *s)
 		rr = (sigh * result);
 		return (rr);
 	}
-	else
-		return (0);
 }
 /**
  *
@@ -47,31 +55,26 @@ int _atoi(char *s)
  *
  *
  */
-int num_find(char *s, int *end, int *begin)
+void num_find(char *s, int *end, int *begin)
 {
-	int count, p;
+	int count;
 
 	count = 0;
-	p = 0;
 	while (s[count] != '\0')
 	{
-		if ((((s[count] >= '0') && (s[count] <= '9')) &&
-			((s[count + 1] >= '0') && (s[count + 1] <= '9'))) && (*begin == 0))
+		if (((s[count] >= '0') && (s[count] <= '9')) &&
+			((s[count + 1] >= '0') && (s[count + 1] >= '9')))
 		{
-			*begin = count - 1;
-			p++;
-
+			*begin = count;
 		}
-		else if (((s[count] >= '0') && (s[count] <= '9')) &&
+		if (((s[count] >= '0') && (s[count] <= '9')) &&
 			((s[count + 1] < '0') || (s[count + 1] > '9') || (s[count + 1] == '\0')))
 		{
 			*end = count;
-			p++;
 			break;
 		}
 		count++;
 	}
-	return(p);
 }
 
 int power(int base, int exp) 
@@ -86,4 +89,3 @@ int power(int base, int exp)
 		return temp * temp;
 	}
 }
-
