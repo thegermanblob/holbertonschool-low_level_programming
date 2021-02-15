@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *
- *
+ * puts2 - prints every other letter
+ * @str: string to be half printed
  *
  *
  */
@@ -19,4 +19,5 @@ void puts2(char *str)
 			_putchar(str[i]);
 		i++;
 	}
+	_putchar('\n');
 }

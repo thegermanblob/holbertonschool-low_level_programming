@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *
- *
+ * _strlen - checks length
+ * @s: string to mesure
  *
  *
  */

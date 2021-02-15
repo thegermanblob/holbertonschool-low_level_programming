@@ -24,7 +24,7 @@ void rev_string(char *s)
 	{
 		storage[i] = s[count];
 		i++;
-		if (count == 0)
+		if (count == 0)[i]
 			storage[i] = '\0';
 	}
 	count = i - 1;
