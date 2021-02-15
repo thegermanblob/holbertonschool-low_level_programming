@@ -9,7 +9,7 @@ void rev_string(char *s)
 {
 	int i, count;
 	char c; /* c is used to store null value of array*/
-	char storage[200];
+	char storage[2000];
 
 	i = 0;
 	c = 'a';
