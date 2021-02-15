@@ -8,17 +8,14 @@ int stlenght(char *t);
 void puts_half(char *s)
 {
 	int i, lh;
-	char c;
 
-	c = 'a';
 	i = stlenght(s);
 	if (i % 2 == 0)
 		lh = i / 2;
 	else 
-		lh = (i - 1) / 2;
-	while (c != '\0')
+		lh = (i + 1) / 2;
+	while (s[lh] != '\0')
 	{
-		c = s[lh];
 		_putchar(s[lh]);
 		lh++;
 	}
