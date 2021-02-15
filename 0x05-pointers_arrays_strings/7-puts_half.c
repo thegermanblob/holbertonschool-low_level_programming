@@ -13,10 +13,7 @@ void puts_half(char *s)
 
 	c = 'a';
 	i = stlenght(s);
-	if (i % 2 == 0)
-		lh = i / 2;
-	else
-		lh = (i - 1) / 2;
+	lh = i / 2;
 	while (c != '\0')
 	{
 		c = s[lh];
@@ -33,16 +30,12 @@ void puts_half(char *s)
  */
 int stlenght(char *t)
 {
-	char c;
 	int ct;
 
-	c = 'a';
 	ct = 0;
-	while (c != '\0')
+	while (t[ct] != '\0')
 	{
-		c = t[ct];
-		if (c != '\0')
-			ct++;
+		ct++;
 	}
 	return (ct);
 }
