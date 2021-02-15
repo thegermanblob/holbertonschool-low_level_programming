@@ -12,7 +12,7 @@ void puts_half(char *s)
 	i = stlenght(s);
 	if (i % 2 == 0)
 		lh = i / 2;
-	else 
+	else
 		lh = (i + 1) / 2;
 	while (s[lh] != '\0')
 	{
