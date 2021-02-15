@@ -13,7 +13,6 @@ int _atoi(char *s)
 	
 
 	result = 0;
-	begin = 0;
 	sigh = 1;
 	num_find(s, &end, &begin);
 	d = end - begin;
