@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 int stlenght(char *t);
 /**
  * puts_half - prints half of the string given
@@ -13,13 +12,15 @@ void puts_half(char *s)
 
 	c = 'a';
 	i = stlenght(s);
-	lh = i / 2;
+	if (i % 2 == 0)
+		lh = i / 2;
+	else 
+		lh = (i - 1) / 2;
 	while (c != '\0')
 	{
 		c = s[lh];
 		_putchar(s[lh]);
-		if (c != '\0')
-			lh++;
+		lh++;
 	}
 	_putchar('\n');
 }
