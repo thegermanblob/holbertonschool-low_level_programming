@@ -19,16 +19,16 @@ char *leet(char *s)
 	col = 0;
 	i = 0;
 
-	for (line = 0; line <= 4; line++)
+	while (s[i] != '\0')
 	{
-		while (s[i] != '\0')
+		for (line = 0; line <= 4; line++)
 		{
 			if ((s[i] == array[line][col]) || (s[i] == array[line][col + 1]))
 			{
 				s[i] = array[line][col + 2];
 			}
-			i++;
 		}
+		i++;
 	}
 	return (s);
 }
