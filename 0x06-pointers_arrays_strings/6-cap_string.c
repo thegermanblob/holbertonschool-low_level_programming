@@ -15,10 +15,10 @@ char *cap_string(char *s)
 	{
 		switch (s[i])
 		{
-			case 9:
-				s[i] = ' ';
+			case '\t':
 			case 44:
 			case '.':
+			case '}':
 			case 33:
 			case 63:
 			case 34:
