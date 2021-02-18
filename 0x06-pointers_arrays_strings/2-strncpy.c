@@ -16,7 +16,6 @@ char *_strncpy(char *dest, char *src, int n)
 	scount = 0;
 	while ((scount < n) && (scount <= i))
 	{
-		
 		dest[scount] = src[scount];
 		scount++;
 	}
@@ -25,7 +24,6 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[si] = '\0';
 		si++;
 	}
-	
 	return (dest);
 }
 /**
