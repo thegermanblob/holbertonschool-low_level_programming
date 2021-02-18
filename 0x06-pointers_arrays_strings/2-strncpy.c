@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * _strncat - concanates a string up to n
+ * _strncpy - concanates a string up to n
  * @dest: destination
  * @src: source
  * @n: number of elements
