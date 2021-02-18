@@ -11,7 +11,7 @@ void reverse_array(int *a, int n)
 	int storage[500];
 
 	count = 0;
-	for (i = n - 1; i >= n; i--)
+	for (i = n - 1; i >= 0; i--)
 	{
 		storage[count] = a[i];
 		count++;
