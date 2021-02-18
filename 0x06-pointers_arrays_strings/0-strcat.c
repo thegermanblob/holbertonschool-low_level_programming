@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * _strcat - concanates string
+ * @dest: destination string
+ * @src: source strin
+ * Return: concanated string
  *
  */
 char *_strcat(char *dest, char *src)
@@ -19,15 +19,19 @@ char *_strcat(char *dest, char *src)
 		scount++;
 		i++;
 	}
-	return dest;
+	return (dest);
 }
-
+/**
+ * _strlen - messures string
+ * @str: string to messures
+ * Return: lenght
+ */
 int _strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0') 
+	while (str[i] != '\0')
 	{
 		i++;
 	}
