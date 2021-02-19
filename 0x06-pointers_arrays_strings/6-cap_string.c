@@ -1,43 +1,33 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
- * cap_string - captions string
- * @s: string to be
- * Return: returns string
- *
+ * cap_string - captilasize words in string
+ * @str: string
+ * Return: pointer to new string
  */
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
-	int i;
+	int index = 0;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (str[index])
 	{
-		switch (s[i])
-		{
-			case '\t':
-			case 44:
-			case '.':
-			case '}':
-			case 33:
-			case 63:
-			case 34:
-			case 40:
-			case 41:
-			case 123:
-			case 32:
-			case 59:
-			case 10:
-				if ((s[i + 1] >= 'a') && (s[i + 1] <= 'z'))
-				{
-					s[i + 1] = s[i + 1] - 32;
-					i++;
-				}
-					break;
-				
-			default:
-				break;
-		}
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
+		index++;
 	}
-	return (s);
+	return (str);
 }
