@@ -29,12 +29,15 @@ char *cap_string(char *s)
 			case 59:
 			case 10:
 				if ((s[i + 1] >= 'a') && (s[i + 1] <= 'z'))
+				{
 					s[i + 1] = s[i + 1] - 32;
-				break;
+					i++;
+				}
+					break;
+				
 			default:
 				break;
 		}
-		i++;
 	}
 	return (s);
 }
