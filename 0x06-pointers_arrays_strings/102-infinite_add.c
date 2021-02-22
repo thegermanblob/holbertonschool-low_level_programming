@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * stradd - adds nubers stored in strings
  * @n1: num1 to be added
@@ -6,8 +7,10 @@
  * @r: the buffer to store the result
  * @r_index: index for buffer
  *
+ * Return: If r can store the sum - a pointer to the result.
+ *         If r cannot store the sum - 0.
+ *
  */
-
 char *stradd(char *n1, char *n2, char *r, int r_index)
 {
 	int num, tens = 0;
@@ -45,11 +48,20 @@ char *stradd(char *n1, char *n2, char *r, int r_index)
 
 	return (r + r_index + 1);
 }
-/**
- *
+
+
+
+/*
+ * infinite_add - messures lenght of strings
+ *  to then add them after it places null
+ * @n1: num1 to be added
+ * @n2: num2 to be added
+ * @r: the buffer to store the result
+ * @r_index: index for buffer
+ * Return: If r can store the sum - a pointer to the result.
+ *         If r cannot store the sum - 0
  *
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int index, n1_len = 0, n2_len = 0;
@@ -60,7 +72,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	for (index = 0; *(n2 + index); index++)
 		n2_len++;
 
-	if (size_r <= n1_len - 1 || size_r <= n2_len + 1)
+	if (size_r <= n1_len + 1 || size_r <= n2_len + 1)
 		return (0);
 
 	n1 += n1_len - 1;
