@@ -1,17 +1,20 @@
+
 #include "holberton.h"
 
+char *add_strings(char *n1, char *n2, char *r, int r_index);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+
 /**
- * stradd - adds nubers stored in strings
- * @n1: num1 to be added
- * @n2: num2 to be added
- * @r: the buffer to store the result
- * @r_index: index for buffer
+ * add_strings - Adds the numbers stored in two strings.
+ * @n1: The string containing the first number to be added.
+ * @n2: The string containing the second number to be added.
+ * @r: The buffer to store the result.
+ * @r_index: The current index of the buffer.
  *
  * Return: If r can store the sum - a pointer to the result.
  *         If r cannot store the sum - 0.
- *
  */
-char *stradd(char *n1, char *n2, char *r, int r_index)
+char *add_strings(char *n1, char *n2, char *r, int r_index)
 {
 	int num, tens = 0;
 
@@ -48,19 +51,15 @@ char *stradd(char *n1, char *n2, char *r, int r_index)
 
 	return (r + r_index + 1);
 }
-
-
-
-/*
- * infinite_add - messures lenght of strings
- *  to then add them after it places null
- * @n1: num1 to be added
- * @n2: num2 to be added
- * @r: the buffer to store the result
- * @r_index: index for buffer
- * Return: If r can store the sum - a pointer to the result.
- *         If r cannot store the sum - 0
+/**
+ * infinite_add - Adds two numbers.
+ * @n1: The first number to be added.
+ * @n2: The second number to be added.
+ * @r: The buffer to store the result.
+ * @size_r: The buffer size.
  *
+ * Return: If r can store the sum - a pointer to the result.
+ *         If r cannot store the sum - 0.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
@@ -79,5 +78,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	n2 += n2_len - 1;
 	*(r + size_r) = '\0';
 
-	return (stradd(n1, n2, r, --size_r));
+	return (add_strings(n1, n2, r, --size_r));
 }
