@@ -1,27 +1,27 @@
 #include "holberton.h"
 /**
- * _strpbrk - gets length of a prefix substring
- * @s: string to check
- * @accept: substring
- * Return: count
- *
+ * *_strstr - finds string inside string
+ * @haystack: string with all goodies
+ * @needle: string to be found
+ * Return: matching substring, else null
  */
-char  *_strstr(char *haystack, char *needle)
+char *_strstr(char *haystack, char *needle)
 {
-	int i1, i2;
+	char *start;
+	char *search;
 
-	i1 = 0;
-	i2 = 0;
-	while (haystack[i1] != '\0')
+	while (*haystack != '\0')
 	{
-		while (needle[i2] != '\0')
+		start = haystack;
+		search = needle;
+		while (*needle != '\0' && *search != '\0' && *search == *haystack)
 		{
-			if (needle[0] == haystack[i1])
-				return (haystack + i1);
-			i2++;
+			haystack++;
+			search++;
 		}
-		i1++;
-		i2 = 0;
+		if (*search == '\0')
+			return (start);
+		haystack = start + 1;
 	}
-	return ('\0');
+	return (0);
 }
