@@ -13,7 +13,7 @@ int is_palindrome(char *s)
 
 	i = 0;
 	l =  _strlen_recursion(s);
-	
+
 	return (palcheck(s, l, i));
 }
 
@@ -21,7 +21,7 @@ int is_palindrome(char *s)
  * palcheck - check if palindorme
  * @c:string
  * @len: length of string
- * @r: result
+ * @i: index
  * Return:1 if palindorme 0 if not
  */
 int palcheck(char *c, int len, int i)
@@ -30,11 +30,11 @@ int palcheck(char *c, int len, int i)
 	{
 		return (1);
 	}
-	if(c[i] == c[len - i - 1])
+	if (c[i] == c[len - i - 1])
 	{
-		return(palcheck(c, len, i + 1));
+		return (palcheck(c, len, i + 1));
 	}
-	return(0);
+	return (0);
 }
 /**
  * _strlen_recursion - messurse string
