@@ -1,5 +1,5 @@
 #include "holberton.h"
-int palcheck(char *c, int len, int r);
+int palcheck(char *c, int len, int i);
 /**
  * is_palindrome - calls funcions to check length then check if palindorme
  * @s:string
@@ -9,14 +9,12 @@ int palcheck(char *c, int len, int r);
  */
 int is_palindrome(char *s)
 {
-	int l, r;
+	int l, i;
 
-	l =  _strlen_recursion(s) - 1;
-	r = 1;
-	r = palcheck(s, l, r);
-	if (r != 0)
-		return (1);
-	return (0);
+	i = 0;
+	l =  _strlen_recursion(s);
+	
+	return (palcheck(s, l, i));
 }
 
 /**
@@ -26,16 +24,17 @@ int is_palindrome(char *s)
  * @r: result
  * Return:1 if palindorme 0 if not
  */
-int palcheck(char *c, int len, int r)
+int palcheck(char *c, int len, int i)
 {
-	if ((*c == *(c + len)) && r == 1)
+	if (c[i] == c[len / 2])
 	{
-		r = palcheck(c + 1, len - 1, r);
 		return (1);
 	}
-	else
-		return (0);
-	return (0);
+	if(c[i] == c[len - i - 1])
+	{
+		return(palcheck(c, len, i + 1));
+	}
+	return(0);
 }
 /**
  * _strlen_recursion - messurse string
