@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
+ * _pow_recursion - does some pow
+ * @x:base
+ * @y:exponent
+ * Returns: pow or -1 for fail
  *
  *
  */
