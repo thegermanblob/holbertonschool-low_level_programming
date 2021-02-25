@@ -3,9 +3,9 @@ int div(int n, int d);
 int is_prime_number(int n);
 /**
  * div - checks if divisible
- * @n: num 
+ * @n: num
  * @d:num to div
- *
+ * Return: 1 pass 0 fail
  *
  *
  */
@@ -17,7 +17,7 @@ int div(int n, int d)
 	if (d == n / 2)
 		return (1);
 
-	return(div(n,d + 1));
+	return (div(n, d + 1));
 }
 
 /**
