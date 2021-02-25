@@ -1,35 +1,38 @@
 #include "holberton.h"
+int div(int n, int d);
+int is_prime_number(int n);
 /**
- * is_prime_number - sqr root finder
- * @n: number
- * @c: ne
- * Return: sqr root
+ * div - checks if divisible
+ * @n: num 
+ * @d:num to div
+ *
+ *
  *
  */
-int faccheck(int n, int c);
+
+int div(int n, int d)
+{
+	if (n % d == 0)
+		return (0);
+	if (d == n / 2)
+		return (1);
+
+	return(div(n,d + 1));
+}
+
+/**
+ * is_prime_number - check if prime number
+ * @n: num to chack
+ * Return: 0 fail. 1 pass
+ */
 int is_prime_number(int n)
 {
-	if (n < 0)
-		return (-1);
-	if (n == 0)
-		return (0);
-	if (n > 0)
-		return (faccheck(n, 1));
-	return (0);
-}
-/**
- * faccheck - checks root
- * @n:number
- * @c:root to try
- * Return:root
- */
+	int d;
 
-int faccheck(int n, int c)
-{
-	if (n % c == 0 && c != (n / 2))
+	d = 2;
+	if (n <= 1)
 		return (0);
-	if (c >= (c / 2))
+	if (n >= 2 && n <= 3)
 		return (1);
-	return (faccheck(n, c + 1));
+	return (div(n, d));
 }
-
