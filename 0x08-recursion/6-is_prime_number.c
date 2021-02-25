@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _sqrt_recursion - sqr root finder
+ * is_prime_number - sqr root finder
  * @n: number
  * @c: ne
  * Return: sqr root
