@@ -16,7 +16,7 @@ int _strlen(char *str)
 	return (i);
 }
 /**
- *
+ * 
  *
  *
  *
@@ -43,5 +43,6 @@ char *_strdup(char *og)
 		cp[i] = og[i];
 		i++;
 	}
+	cp[i] = og[i];
 	return (cp);
 }
