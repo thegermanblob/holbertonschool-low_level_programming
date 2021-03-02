@@ -23,7 +23,7 @@ int _strlen(char *str)
  */
 char *_strdup(char *og)
 {
-	int n, i;
+	int n;
 	char *cp;
 
 	n = 1 + _strlen(og);
@@ -37,12 +37,10 @@ char *_strdup(char *og)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (og[i] != '\0')
+	while (n >= 0)
 	{
-		cp[i] = og[i];
-		i++;
+		cp[n] = og[n];
+		n--;
 	}
-	cp[i] = og[i];
 	return (cp);
 }
