@@ -26,13 +26,17 @@ char *_strdup(char *og)
 	int n, i;
 	char *cp;
 
-	n = _strlen(og);
+	n = 1 + _strlen(og);
 
 	if (n == 0)
+	{
 		return (NULL);
-	cp = malloc((n + 1) * sizeof(char));
+	}
+	cp = malloc(n * sizeof(char));
 	if (cp == NULL)
+	{
 		return (NULL);
+	}
 	i = 0;
 	while (og[i] != '\0')
 	{
