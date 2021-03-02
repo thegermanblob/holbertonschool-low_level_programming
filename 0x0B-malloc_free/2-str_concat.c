@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _strlen - messures string
  * @str: string to messure
@@ -18,10 +19,9 @@ int _strlen(char *str)
 	return (i);
 }
 /**
- * _strncat - concanates a string up to n
- * @dest: destination
- * @src: source
- * @n: number of elements
+ * str_concat - concanates a string up to n
+ * @s1: string 2
+ * @s2: string 1
  * Return: concanated string
  */
 char *str_concat(char *s1, char *s2)
@@ -29,6 +29,10 @@ char *str_concat(char *s1, char *s2)
 	int n, i, i2;
 	char *cp;
 
+	if (s2 == NULL)
+		s2 = "";
+	if (s1 == NULL)
+		s1 = "";
 	n =  _strlen(s1) + _strlen(s2);
 	cp = malloc(n * sizeof(char));
 	if (cp == NULL)
