@@ -26,11 +26,11 @@ char *_strdup(char *og)
 	int n, i;
 	char *cp;
 
-	n = 1 + _strlen(og);
+	n = _strlen(og);
 
 	if (n == 0)
 		return (NULL);
-	cp = malloc(n * sizeof(char));
+	cp = malloc((n + 1) * sizeof(char));
 	if (cp == NULL)
 		return (NULL);
 	i = 0;
