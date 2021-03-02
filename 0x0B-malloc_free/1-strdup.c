@@ -1,9 +1,9 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * _strlen - 
- *
- *
+ * _strlen - checks len
+ * @str: strind to messure
+ * Return: len of string
  */
 int _strlen(char *str)
 {
@@ -16,9 +16,9 @@ int _strlen(char *str)
 	return (i);
 }
 /**
- * 
- *
- *
+ * _strdup - copy string
+ * @og: string to cp
+ * Return: null or copy of string
  *
  */
 char *_strdup(char *og)
@@ -37,6 +37,7 @@ char *_strdup(char *og)
 	{
 		return (NULL);
 	}
+	n--;
 	while (n >= 0)
 	{
 		cp[n] = og[n];
