@@ -28,7 +28,7 @@ char *_strdup(char *og)
 
 	n = 1 + _strlen(og);
 
-	if (n == 0)
+	if (og == NULL)
 	{
 		return (NULL);
 	}
