@@ -19,14 +19,14 @@ int _strlen(char *str)
 	return (i);
 }
 /**
- * str_concat - concanates a string up to n
- * @s1: string 2
- * @s2: string 1
+ * argstostr - concanates a string up to n
+ * @ac: num of args
+ * @av: string 1
  * Return: concanated string
  */
 char *argstostr(int ac, char **av)
 {
-	int i,n,j,x;
+	int i, n, j, x;
 	char *a;
 
 	if (ac == 0 || av == NULL)
@@ -37,16 +37,16 @@ char *argstostr(int ac, char **av)
 	}
 	n++;
 	a = malloc(n * sizeof(char));
-	if(a == NULL)
+	if (a == NULL)
 		return (NULL);
 	x = 0;
 
-	for(i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; j < _strlen(av[i]); j++)
 		{
 			a[x] = av[i][j];
-			if(j == _strlen(av[i]) - 1)
+			if (j == _strlen(av[i]) - 1)
 				a[x] = '\n';
 			x++;
 		}
