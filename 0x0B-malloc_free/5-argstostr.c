@@ -29,6 +29,8 @@ char *argstostr(int ac, char **av)
 	int i,n,j,x;
 	char *a;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
 		n += _strlen(av[i]);
