@@ -2,8 +2,9 @@
 #include "holberton.h"
 
 /**
- *
- *
+ * malloc_checked - does malloc and checks
+ * @b:size for malloc
+ * Return: pointer on 1 returns 98 on exit
  *
  */
 
