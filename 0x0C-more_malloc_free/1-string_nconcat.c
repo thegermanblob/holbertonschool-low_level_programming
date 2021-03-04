@@ -33,20 +33,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 	{
 		str = malloc((len(s1) + 1) * sizeof(char));
-		if (str == NULL)
-			return (NULL);
 	}
 	else if (n >= len(s2))
 	{
 		str = malloc((len(s1) + len(s2) + 1) * sizeof(char));
-		if (str == NULL)
-			return (NULL);
 	}
 	else
 	{
 		str = malloc((len(s1) + n + 1) * sizeof(char));
-		if (str == NULL)
-			return (NULL);
+	}
+
+	if (str == NULL)
+	{
+		free(str);
+		return (NULL);
 	}
 	i = 0;
 	i2 = 0;
