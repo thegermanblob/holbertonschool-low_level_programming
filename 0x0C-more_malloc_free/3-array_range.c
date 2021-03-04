@@ -1,7 +1,9 @@
 #include <stdlib.h>
 /**
- *
- *
+ * array_range - make array from min to max
+ * @min: smallest num
+ * @max:come on rlly
+ * Return: array
  *
  */
 int *array_range(int min, int max)
