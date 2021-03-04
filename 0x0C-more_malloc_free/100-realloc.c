@@ -2,8 +2,11 @@
 #include <stdlib.h>
 
 /**
- *
- *
+ * _realloc - re allocates mem
+ * @ptr: pointer
+ * @old_size: old size of mem block pointed at
+ * @new_size: size for new block
+ * Return: Null on used as free ptr if old_size == new_size ptr on succ
  *
  *
  *
