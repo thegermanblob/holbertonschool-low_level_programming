@@ -4,9 +4,9 @@
  *
  *
  */
-void *array_rane(int min, int max)
+int *array_range(int min, int max)
 {
-	unsigned int i;
+	int i;
 	int *s;
 
 	s = malloc(max * sizeof(int));
@@ -15,9 +15,10 @@ void *array_rane(int min, int max)
 		free(s);
 		return (NULL);
 	}
-	for (i = 0; i <= max; i++)
+	for (i = 0; i < max; i++)
 	{
-		s[i] = i;
+		s[i] = min;
+		min++;
 	}
 	return (s);
 }
