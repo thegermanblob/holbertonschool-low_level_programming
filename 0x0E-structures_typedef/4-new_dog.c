@@ -62,7 +62,11 @@ dog_t *new_dog(char *name1, float age, char *owner1)
 		return (NULL);
 	owner = scpy(owner, owner1);
 	if (dogo == NULL)
+	{
+		free(dogo->name);
+		free(dogo->owner);
 		return (NULL);
+	}
 
 	dogo->name = name;
 	dogo->age = age;
