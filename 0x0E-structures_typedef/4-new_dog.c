@@ -40,25 +40,25 @@ char *scpy(char *dest, char *src)
 
 /**
  * new_dog - makes a new dog struct
- * @name: name fore dog
+ * @name1: name fore dog
  * @age: dog age
- * @owner: name for owner
+ * @owner1: name for owner
  * Return: pointer to new dog on succ Null on fail
  */
-dog_t *new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name1, float age, char *owner1)
 {
 	dog_t *dogo = malloc(sizeof(dog_t));
-	char *n, *o;
+	char *name, *owner;
 
-	n = malloc(slen(name) * sizeof(char));
-	if (n == NULL)
+	name = malloc(slen(name1) * sizeof(char));
+	if (name == NULL)
 		return (NULL);
-	n = scpy(n, name);
+	name = scpy(name, name1);
 
-	o = malloc(slen(owner) * sizeof(char));
-	if (o == NULL)
+	owner = malloc(slen(owner1) * sizeof(char));
+	if (owner == NULL)
 		return (NULL);
-	o = scpy(o, owner);
+	owner = scpy(owner, owner1);
 	if (dogo == NULL)
 		return (NULL);
 
