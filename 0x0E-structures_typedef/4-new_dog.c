@@ -47,23 +47,22 @@ char *scpy(char *dest, char *src)
  * @owner1: name for owner
  * Return: pointer to new dog on succ Null on fail
  */
-dog_t *new_dog(char *name1, float age, char *owner1)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dogo = malloc(sizeof(dog_t));
-	char *name, *owner;
 
-	dogo->name = malloc((1 + slen(name1)) * sizeof(char));
+	dogo->name = malloc((1 + slen(name)) * sizeof(char));
 	if (dogo->name == NULL)
 	{
 		free(dogo->name);
 		return (NULL);
 	}
-	name = scpy(name, name1);
+	dogo->name = scpy(dogo->name, name);
 
-	dogo->owner = malloc((slen(owner1) + 1) * sizeof(char));
+	dogo->owner = malloc((slen(owner) + 1) * sizeof(char));
 	if (dogo->owner == NULL)
 		return (NULL);
-	dogo->owner = scpy(owner, owner1);
+	dogo->owner = scpy(dogo->owner, owner);
 	if (dogo == NULL)
 	{
 		free(dogo->name);
@@ -71,9 +70,7 @@ dog_t *new_dog(char *name1, float age, char *owner1)
 		return (NULL);
 	}
 
-	dogo->name = name;
 	dogo->age = age;
-	dogo->owner = owner;
 
 	return (dogo);
 }
