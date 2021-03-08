@@ -1,10 +1,7 @@
 #include <stdio.h>
 /**
- *
- *
- *
- *
- *
+ * main - prints base file name
+ * Return: 0
  */
 int main(void)
 {
