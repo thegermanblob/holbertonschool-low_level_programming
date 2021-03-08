@@ -42,9 +42,9 @@ char *scpy(char *dest, char *src)
 
 /**
  * new_dog - makes a new dog struct
- * @name1: name fore dog
+ * @name: name fore dog
  * @age: dog age
- * @owner1: name for owner
+ * @owner: name for owner
  * Return: pointer to new dog on succ Null on fail
  */
 dog_t *new_dog(char *name, float age, char *owner)
@@ -54,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dogo == NULL)
 	{
 		free(dogo);
-		return(NULL);
+		return (NULL);
 	}
 	dogo->name = malloc((1 + slen(name)) * sizeof(char));
 	if (dogo->name == NULL)
