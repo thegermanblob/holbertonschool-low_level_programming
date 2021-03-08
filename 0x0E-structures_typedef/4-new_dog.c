@@ -11,7 +11,7 @@ int slen(char *str)
 {
 	int i;
 
-	for(i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 		;
 	return (i);
 }
@@ -50,15 +50,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *dogo = malloc(sizeof(dog_t));
 	char *n, *o;
 
-	n= malloc(slen(name) * sizeof(char));
+	n = malloc(slen(name) * sizeof(char));
 	if (n == NULL)
 		return (NULL);
 	n = scpy(n, name);
 
 	o = malloc(slen(owner) * sizeof(char));
 	if (o == NULL)
-		return(NULL);
-	o =scpy(o, owner);
+		return (NULL);
+	o = scpy(o, owner);
 	if (dogo == NULL)
 		return (NULL);
 
