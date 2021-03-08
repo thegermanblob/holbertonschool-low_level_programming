@@ -30,7 +30,6 @@ char *scpy(char *dest, char *src)
 	{
 		dest[count] = src[count];
 	}
-	count++;
 	dest[count] = src[count];
 	return (dest);
 }
