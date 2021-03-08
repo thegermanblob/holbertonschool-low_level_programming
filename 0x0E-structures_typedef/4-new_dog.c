@@ -23,15 +23,18 @@ int slen(char *str)
  */
 char *scpy(char *dest, char *src)
 {
-	int i, count;
+	char *ptr;
 
-	i = slen(src);
-	for (count = 0; count <= i; count++)
+	ptr = dest;
+	while (*src != '\0')
 	{
-		dest[count] = src[count];
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	dest[count] = src[count];
-	return (dest);
+
+	*dest = '\0';
+	return (ptr);
 }
 
 
@@ -49,12 +52,12 @@ dog_t *new_dog(char *name1, float age, char *owner1)
 	dog_t *dogo = malloc(sizeof(dog_t));
 	char *name, *owner;
 
-	name = malloc(slen(name1) * sizeof(char));
+	name = malloc((1 + slen(name1)) * sizeof(char));
 	if (name == NULL)
 		return (NULL);
 	name = scpy(name, name1);
 
-	owner = malloc(slen(owner1) * sizeof(char));
+	owner = malloc((slen(owner1) + 1) * sizeof(char));
 	if (owner == NULL)
 		return (NULL);
 	owner = scpy(owner, owner1);
