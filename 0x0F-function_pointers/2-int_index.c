@@ -1,5 +1,5 @@
-#include "function_pointers.h"
 #include <stdlib.h>
+#include "function_pointers.h"
 /**
  * int_index - runs the given function through an array
  * @array: array to be given
