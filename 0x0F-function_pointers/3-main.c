@@ -15,15 +15,16 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	s = argv[2];
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
-	if ((get_op_func(s) == NULL || s == NULL) || (n1 == 0 && s[0] == '/'))
+	if ((get_op_func(s) == NULL || s == NULL) || (n2 == 0 && *s == '/')
+			|| (*s == '%' && n2 == 0))
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	printf("%d\n", get_op_func(s)(n1, n2));
