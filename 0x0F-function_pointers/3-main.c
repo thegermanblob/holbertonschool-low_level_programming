@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	s = argv[2];
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
-	if (get_op_func(s) == NULL || s == NULL)
+	if ((get_op_func(s) == NULL || s == NULL) || (n1 == 0 && s[0] == '/'))
 	{
 		printf("Error");
 		exit(98);
