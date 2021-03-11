@@ -14,13 +14,11 @@ void print_numbers(const char *s, const unsigned int n, ...)
 	va_start(fargs, n);
 	for (i = 0; i < n; i++)
 	{
-		if ((i != n - 1) && (s == NULL))
 			printf("%i", va_arg(fargs, int));
-		else if ((i != n - 1) && (s != NULL))
-			printf("%i%s", va_arg(fargs, int), s);
-		else
-			printf("%i\n", va_arg(fargs, int));
+		if ((i != n - 1) && (s != NULL))
+			printf("%s", s);
 	}
+	printf("\n");
 	va_end(fargs);
 }
 
