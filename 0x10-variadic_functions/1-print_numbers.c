@@ -14,7 +14,7 @@ void print_numbers(const char *s, const unsigned int n, ...)
 	va_start(fargs, n);
 	for (i = 0; i < n; i++)
 	{
-			printf("%i", va_arg(fargs, int));
+		printf("%i", va_arg(fargs, int));
 		if ((i != n - 1) && (s != NULL))
 			printf("%s", s);
 	}
