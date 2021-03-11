@@ -16,7 +16,7 @@ void print_numbers(const char *s, const unsigned int n, ...)
 	{
 		if ((i != n - 1) && (s == NULL))
 			printf("%i", va_arg(fargs, int));
-		else if (i != n - 1)
+		else if ((i != n - 1) && (s != NULL))
 			printf("%i%s", va_arg(fargs, int), s);
 		else
 			printf("%i\n", va_arg(fargs, int));
