@@ -12,12 +12,12 @@ void print_all(const char * const format, ...)
 	va_list fargs;
 	char *str, *coma = "";
 
-	if (format == NULL)
+/*	if (format == NULL)
 	{
 		printf("\n");
 		return;
 	}
-	va_start(fargs, format);
+*/	va_start(fargs, format);
 	while ((format[i] != '\0') && format != NULL)
 	{
 		switch (format[i])
