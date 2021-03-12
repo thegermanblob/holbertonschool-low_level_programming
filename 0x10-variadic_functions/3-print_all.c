@@ -4,8 +4,7 @@
 #include "variadic_functions.h"
 /**
  * print_all - prints all
- * @format: lists argumants for char, int, float, char
- * Return: none
+ * @format: format of args
  */
 void print_all(const char * const format, ...)
 {
@@ -19,7 +18,7 @@ void print_all(const char * const format, ...)
 		return;
 	}
 	va_start(fargs, format);
-	while (format[i] != '\0')
+	while ((format[i] != '\0') && format != NULL)
 	{
 		switch (format[i])
 		{
