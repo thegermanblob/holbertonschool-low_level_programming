@@ -2,16 +2,24 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+
 /**
  *
  *
  */
-void pchar(va_list fargs)
+const char *_strchr(const char *s, char c)
 {
-	char c;
+	int i = 0;
 
-	c = va_arg(fargs, int);
-	printf("%c", c);
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return (s + i);
+		i++;
+	}
+	if (s[i] == c)
+		return (s + i);
+	return (NULL);
 }
 /**
  *
@@ -62,6 +70,7 @@ void print_all(const char *const format, ...)
 {
 	unsigned int i;
 	va_list fargs;
+	char c;
 
 	va_start(fargs, format);
 	while (*(format + i) != '\0' && (format))
@@ -69,7 +78,10 @@ void print_all(const char *const format, ...)
 		switch (*(format + i))
 		{
 			case 'c':
-				pchar(fargs);
+
+				c = va_arg(fargs, int);
+				printf("%c", c);
+
 				break;
 			case 'i':
 				pint(fargs);
@@ -85,10 +97,10 @@ void print_all(const char *const format, ...)
 				continue;
 
 		}
-/*		if ((*(format + i + 1) != '\0') && (strchr((format + i+1),'c') ||
-				strchr((format + i +1), 'c') || strchr((format + i+1),'f')
-				|| strchr((format + i+1),'s')))
-			printf(", ");*/
+		if ((*(format + i + 1) != '\0') && (_strchr((format + i + 1),'c') ||
+				_strchr((format + i + 1), 'c') || _strchr((format + i + 1),'f')
+				|| _strchr((format + i+1),'s')))
+			printf(", ");
 		i++;
 	}
 	printf("\n");
