@@ -7,14 +7,15 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	int result;
+	int r, result;
 	unsigned int i;
 	va_list fargs;
 
 	va_start(fargs, n);
 	for (i = 0; i < n; i++)
 	{
-		result += va_arg(fargs, int);
+		r = va_arg(fargs, int);
+		result += r;
 	}
 	va_end(fargs);
 
