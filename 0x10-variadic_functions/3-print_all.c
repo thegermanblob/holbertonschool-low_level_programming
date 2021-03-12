@@ -13,12 +13,12 @@ void print_all(const char * const format, ...)
 	va_list fargs;
 	char *str, *coma = "";
 
-	va_start(fargs, format);
 	if (format == NULL)
 	{
 		printf("\n");
 		return;
 	}
+	va_start(fargs, format);
 	while (format[i] != '\0')
 	{
 		switch (format[i])
