@@ -1,93 +1,43 @@
-#include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
-#include <string.h>
-#include "lol.c"
-
+#include <stdlib.h>
+#include <stdarg.h>
+#include "variadic_functions.h"
 /**
- *
- *
+ * print_all - prints all
+ * @format: lists argumants for char, int, float, char
+ * Return: none
  */
-/**
- *
- *
- *
- */
-void pint(va_list fargs)
+void print_all(const char * const format, ...)
 {
-	int n;
-
-	n = va_arg(fargs, int);
-	printf("%i",n);
-}
-/**
- *
- *
- */
-void pflot(va_list fargs)
-{
-	float n;
-	n = va_arg(fargs, double);
-	printf("%f", n);
-}
-/**
- *
- *
- */
-void pstr(va_list fargs)
-{
-	char *s;
-
-	s = va_arg(fargs, char *);
-
-	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-		printf("%s", s);
-}
-
-/**
- *
- *
- *
- */
-void print_all(const char *const format, ...)
-{
-	unsigned int i;
+	unsigned int i = 0;
 	va_list fargs;
-	char c;
+	char *str, *coma = "";
 
 	va_start(fargs, format);
-	while (*(format + i) != '\0' && (format))
+	while (format[i] != '\0' && (format != NULL))
 	{
-		switch (*(format + i))
+		switch (format[i])
 		{
 			case 'c':
-
-				c = va_arg(fargs, int);
-				printf("%c", c);
-
+				printf("%s%c", coma, va_arg(fargs, int));
 				break;
 			case 'i':
-				pint(fargs);
+				printf("%s%d", coma, va_arg(fargs, int));
 				break;
 			case 'f':
-				pflot(fargs);
+				printf("%s%f", coma, va_arg(fargs, double));
 				break;
 			case 's':
-				pstr(fargs);
+				str = va_arg(fargs, char *);
+				if (str == NULL)
+					str = "(nil)";
+				printf("%s%s", coma, str);
 				break;
 			default:
 				i++;
 				continue;
-
 		}
-		if ((*(format + i + 1) != '\0') && (_strchr((format + i + 1),'c') ||
-				_strchr((format + i + 1), 'c') || _strchr((format + i + 1),'f')
-				|| _strchr((format + i+1),'s')))
-			printf(", ");
+		coma = ", ";
 		i++;
 	}
 	printf("\n");
