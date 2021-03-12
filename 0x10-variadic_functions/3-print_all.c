@@ -85,10 +85,10 @@ void print_all(const char *const format, ...)
 				continue;
 
 		}
-		if ((*(format + i + 1) != '\0') && (strchr((format + i+1),'c') ||
+/*		if ((*(format + i + 1) != '\0') && (strchr((format + i+1),'c') ||
 				strchr((format + i +1), 'c') || strchr((format + i+1),'f')
 				|| strchr((format + i+1),'s')))
-			printf(", ");
+			printf(", ");*/
 		i++;
 	}
 	printf("\n");
