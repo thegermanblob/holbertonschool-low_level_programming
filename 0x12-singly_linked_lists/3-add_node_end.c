@@ -9,7 +9,7 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *temp, *last;
-	int i;
+	int i = 0;
 
 	last = *head;
 	temp = malloc(sizeof(list_t));
