@@ -1,9 +1,9 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- *
- *
- *
+ * pop_lists - deletes the head
+ * @head: the head of the list
+ * Return: new head
  */
 int pop_list(listint_t **head)
 {
@@ -19,9 +19,8 @@ int pop_list(listint_t **head)
 			temp = (*head)->next;
 			n = (*head)->n;
 			free(*head);
-			*head = tmp;
+			*head = temp;
 		}
 	}
 	return (n);
 }
-
