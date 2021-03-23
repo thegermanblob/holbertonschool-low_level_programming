@@ -5,7 +5,7 @@
  * @head: the head of the list
  * Return: new head
  */
-int pop_list(listint_t **head)
+int pop_listint(listint_t **head)
 {
 	int n;
 	listint_t *temp;
