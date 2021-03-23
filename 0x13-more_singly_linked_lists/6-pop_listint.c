@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * pop_listsint - deletes the head
+ * pop_listint - deletes the head
  * @head: the head of the list
  * Return: new head
  */
