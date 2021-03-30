@@ -25,9 +25,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	rc = read(file, data, letters);
 
 
-	c = write(1, data, rc);
+	c = write(STDOUT_FILENO, data, rc);
 
-	if (file == -1 || rc == -1 || c == -1 || c != rc)
+	if (file < 0 || rc < 0 || c < 0 || c != rc)
 	{
 		free(data);
 		close(file);
