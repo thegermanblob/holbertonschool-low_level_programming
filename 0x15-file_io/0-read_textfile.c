@@ -21,20 +21,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file = open(filename, O_RDONLY);
 
 	rc = read(file, data, letters);
-	if (rc < 0)
-		return (0);
 
-	if (file < 0)
-		return (0);
 
 	c = write(1, data, rc);
 
-	if (file < 0 || rc < 0|| c < 0 || c != rc)
+	if (file < 0 || rc < 0 || c < 0 || c != rc)
 	{
+		free(data);
 		return (0);
 	}
 	else
 	{
+		free(data);
+		close(file);
 		return (c);
 	}
 }
