@@ -30,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	c = write(1, data, rc);
 
-	if (c > letters)
+	if (c != (unsigned int)rc)
 	{
 		return (0);
 	}
