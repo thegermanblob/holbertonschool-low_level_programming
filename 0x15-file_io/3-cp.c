@@ -15,11 +15,6 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to");
 		exit(97);
 	}
-	if (av[1] == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
 	res = cp_file(av[1], av[2]);
 
 	if (res == -2)
@@ -74,7 +69,7 @@ int cp_file(const char *filename, const char *newfile)
 
 
 
-	oldfile = open(filename, O_WRONLY);
+	oldfile = open(filename, O_RDWR);
 	nfile = open(newfile, O_RDWR | O_TRUNC | O_CREAT, S_IRUSR |
 			S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	rc = read(oldfile, data, BUFSIZ);
