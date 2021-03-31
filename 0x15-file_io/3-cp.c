@@ -69,7 +69,7 @@ int cp_file(const char *filename, const char *newfile)
 
 
 
-	oldfile = open(filename, O_WRONLY);
+	oldfile = open(filename, O_RDWR);
 	nfile = open(newfile, O_RDWR | O_TRUNC | O_CREAT, S_IRUSR |
 			S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	rc = read(oldfile, data, BUFSIZ);
