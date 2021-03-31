@@ -15,16 +15,21 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to");
 		exit(97);
 	}
+	if (av[1] == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	res = cp_file(av[1], av[2]);
 
 	if (res == -2)
 	{
-		dprintf(2, "Error: Can't read from file %s", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
 		exit(98);
 	}
 	else if (res == -3)
 	{
-		dprintf(2, "Error: Can't write to %s", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
 		exit(99);
 	}
 
@@ -69,7 +74,7 @@ int cp_file(const char *filename, const char *newfile)
 
 
 
-	oldfile = open(filename, O_RDWR);
+	oldfile = open(filename, O_WRONLY);
 	nfile = open(newfile, O_RDWR | O_TRUNC | O_CREAT, S_IRUSR |
 			S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	rc = read(oldfile, data, BUFSIZ);
@@ -94,7 +99,7 @@ int cp_file(const char *filename, const char *newfile)
 	cl = close(oldfile);
 	if (cl < 0)
 	{
-		dprintf(2, "Error: Can't close fd %ld", oldfile);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld", oldfile);
 		exit(100);
 	}
 	return (1);
