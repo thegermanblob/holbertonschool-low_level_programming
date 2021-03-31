@@ -24,12 +24,12 @@ int main(int ac, char **av)
 
 	if (res == -2)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
+		dprintf(2, "Error: Can't read from file %s", av[1]);
 		exit(98);
 	}
 	else if (res == -3)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
+		dprintf(2, "Error: Can't write to %s", av[2]);
 		exit(99);
 	}
 
@@ -99,7 +99,7 @@ int cp_file(const char *filename, const char *newfile)
 	cl = close(oldfile);
 	if (cl < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %ld", oldfile);
+		dprintf(2, "Error: Can't close fd %ld", oldfile);
 		exit(100);
 	}
 	return (1);
