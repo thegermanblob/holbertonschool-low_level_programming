@@ -1,13 +1,12 @@
 #include "lists.h"
 /**
  * sum_dlistint - prints list
- * @h:head of list
+ * @head:head of list
  * Return: lenght of list
  */
 int sum_dlistint(dlistint_t *head)
 {
 	int result = 0;
-	puts("hi");
 
 	while (head)
 	{
