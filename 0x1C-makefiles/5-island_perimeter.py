@@ -5,6 +5,9 @@
 def island_perimeter(grid):
     """ calculates the perimeter of island from grid """
 
+    if grid is None:
+        return 0
+
     num_land = 0
     for line in grid:
         for land in line:
