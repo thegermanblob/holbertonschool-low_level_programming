@@ -10,4 +10,7 @@ def island_perimeter(grid):
         for land in line:
             if land == 1:
                 num_land += 1
-    return (num_land * 2) + 2
+    if num_land == 0:
+        return 0
+    else:
+        return (num_land * 2) + 2
