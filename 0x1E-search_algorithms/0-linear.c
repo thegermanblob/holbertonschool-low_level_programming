@@ -8,7 +8,7 @@
  */
 int linear_search(int *array, size_t size, int value)
 {
-	int i = 0, found = 0;
+	 unsigned int i = 0, found = 0;
 
 	do {
 		if (array[i] == value)
@@ -20,6 +20,6 @@ int linear_search(int *array, size_t size, int value)
 			i++;
 	} while (i < size || found == 1);
 	if (found == 0)
-		i = -1;
+		return (-1);
 	return (i);
 }
